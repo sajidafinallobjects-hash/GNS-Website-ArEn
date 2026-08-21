@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ArrowRight, Menu, X, Globe } from 'lucide-react';
 import { navLinks } from '@/data/navigation';
-import { Logo } from './Logo';
+// import { Logo } from './Logo';  <-- تم الحذف
 import { useLanguage } from '@/i18n/useLanguage';
 
 function LangButton({ lang, label, language, setLanguage }: { lang: 'en' | 'ar'; label: string; language: 'en' | 'ar'; setLanguage: (l: 'en' | 'ar') => void }) {
@@ -40,7 +40,11 @@ export function Header() {
   return (
     <header className="site-header">
       <div className="container nav-wrap">
-        <Logo />
+        <img
+          src="/gns-logo.png"
+          alt="GNS"
+          className="h-12 w-auto"
+        />
         <nav className={open ? 'mobile-open' : ''} aria-label={language === 'ar' ? 'التنقل' : 'Main navigation'}>
           {navLinks.map((link) => (
             <Link
