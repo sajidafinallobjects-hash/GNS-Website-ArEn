@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="GNS AI mark">
+  <rect width="64" height="64" rx="14" fill="#102b4d"/>
+  <g fill="none" stroke="#8fb8d8" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke-width="3.5" d="M30 15c-7-3-14 2-13 9-5 2-6 9-2 13-2 6 3 11 9 10 2 5 9 5 12 1"/>
+    <path stroke-width="3.5" d="M34 15c7-3 14 2 13 9 5 2 6 9 2 13 2 6-3 11-9 10-2 5-9 5-12 1"/>
+    <path stroke-width="3.5" d="M32 14v35M25 22c3 1 5 3 7 6M39 22c-3 1-5 3-7 6M23 36c4 0 6 2 9 5M41 36c-4 0-6 2-9 5"/>
+    <path stroke="#4d91c9" stroke-width="2.5" d="M10 25h7M47 25h7M10 43h6M48 43h6M32 8v6M32 50v6"/>
+  </g>
+  <g fill="#4d91c9">
+    <circle cx="10" cy="25" r="2.5"/><circle cx="54" cy="25" r="2.5"/>
+    <circle cx="10" cy="43" r="2.5"/><circle cx="54" cy="43" r="2.5"/>
+    <circle cx="32" cy="8" r="2.5"/><circle cx="32" cy="56" r="2.5"/>
+  </g>
+</svg>
