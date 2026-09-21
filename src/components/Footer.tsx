@@ -69,19 +69,24 @@ export function Footer() {
           <div>
             <span className="footer-label">{t('Get in touch')}</span>
 
-            <a href="mailto:gnscompany111@gmail.com">
+            {/* Official Company Email */}
+            <a href="mailto:info@gnsprime.com">
               <Mail size={13} />
-              gnscompany111@gmail.com
+              info@gnsprime.com
             </a>
 
+            {/* Official Company Phone */}
             <a href="tel:+96871517838">
               <Phone size={13} />
-              00 968 7151 7838
+              +968 7151 7838
             </a>
 
+            {/* Official Company Location */}
             <span className="footer-location">
               <MapPin size={13} />
-              {language === 'ar' ? 'مسقط، عُمان' : 'Muscat, Oman'}
+              {language === 'ar'
+                ? 'مسقط، سلطنة عُمان'
+                : 'Muscat, Sultanate of Oman'}
             </span>
 
             <Link className="footer-cta" to="/contact">
