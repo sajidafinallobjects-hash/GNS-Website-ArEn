@@ -19,8 +19,10 @@ import { tService } from '../i18n/translations';
 export function Footer() {
   const { language, t } = useLanguage();
 
+  const isArabic = language === 'ar';
+
   return (
-    <footer>
+    <footer className="site-footer">
       <div className="container footer-main">
 
         {/* Brand */}
@@ -48,12 +50,13 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Navigation */}
+        {/* Footer Links */}
         <div className="footer-links">
 
-          <div>
+          {/* Company */}
+          <div className="footer-column">
             <span className="footer-label">
-              {t('Company')}
+              {isArabic ? 'الشركة' : 'Company'}
             </span>
 
             {navLinks.map((link) => (
@@ -64,9 +67,9 @@ export function Footer() {
           </div>
 
           {/* Services */}
-          <div>
+          <div className="footer-column">
             <span className="footer-label">
-              {t('Services')}
+              {isArabic ? 'الخدمات' : 'Services'}
             </span>
 
             {services.slice(0, 5).map((service) => (
@@ -77,63 +80,99 @@ export function Footer() {
           </div>
 
           {/* Contact */}
-          <div>
+          <div className="footer-column footer-contact-column">
             <span className="footer-label">
-              {t('Contact')}
+              {isArabic ? 'تواصل معنا' : 'Contact'}
             </span>
 
-            {/* General Inquiries */}
-            <a href="mailto:info@gnsprime.com">
-              <Mail size={13} />
+            {/* General */}
+            <a
+              className="footer-contact-item"
+              href="mailto:info@gnsprime.com"
+            >
+              <Mail size={15} />
+
               <span>
                 <strong>info@gnsprime.com</strong>
-                <small>{t('General Inquiries')}</small>
+                <small>
+                  {isArabic
+                    ? 'الاستفسارات العامة'
+                    : 'General Inquiries'}
+                </small>
               </span>
             </a>
 
             {/* Sales */}
-            <a href="mailto:sales@gnsprime.com">
-              <Mail size={13} />
+            <a
+              className="footer-contact-item"
+              href="mailto:sales@gnsprime.com"
+            >
+              <Mail size={15} />
+
               <span>
                 <strong>sales@gnsprime.com</strong>
-                <small>{t('Sales & Business')}</small>
+                <small>
+                  {isArabic
+                    ? 'المبيعات والأعمال'
+                    : 'Sales & Business'}
+                </small>
               </span>
             </a>
 
             {/* Support */}
-            <a href="mailto:support@gnsprime.com">
-              <Mail size={13} />
+            <a
+              className="footer-contact-item"
+              href="mailto:support@gnsprime.com"
+            >
+              <Mail size={15} />
+
               <span>
                 <strong>support@gnsprime.com</strong>
-                <small>{t('Customer Support')}</small>
+                <small>
+                  {isArabic
+                    ? 'دعم العملاء'
+                    : 'Customer Support'}
+                </small>
               </span>
             </a>
 
             {/* Phone */}
-            <a href="tel:+96871517838">
-              <Phone size={13} />
+            <a
+              className="footer-contact-item"
+              href="tel:+96871517838"
+            >
+              <Phone size={15} />
+
               <span>
                 <strong>+968 7151 7838</strong>
-                <small>{t('Phone / WhatsApp')}</small>
+                <small>
+                  {isArabic
+                    ? 'الهاتف / واتساب'
+                    : 'Phone / WhatsApp'}
+                </small>
               </span>
             </a>
 
             {/* Location */}
-            <span className="footer-location">
-              <MapPin size={13} />
+            <div className="footer-contact-item footer-location">
+              <MapPin size={15} />
+
               <span>
                 <strong>
-                  {language === 'ar'
+                  {isArabic
                     ? 'مسقط، سلطنة عُمان'
                     : 'Muscat, Sultanate of Oman'}
                 </strong>
-                <small>{t('Location')}</small>
+
+                <small>
+                  {isArabic ? 'الموقع' : 'Location'}
+                </small>
               </span>
-            </span>
+            </div>
 
             {/* CTA */}
             <Link className="footer-cta" to="/contact">
-              {t('Start a conversation')}
+              {isArabic ? 'ابدأ محادثة' : 'Start a conversation'}
               <ArrowRight size={14} />
             </Link>
           </div>
