@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+
 import {
   Mail,
   Phone,
@@ -21,6 +22,8 @@ export function Footer() {
   return (
     <footer>
       <div className="container footer-main">
+
+        {/* Brand */}
         <div className="footer-brand">
           <Logo />
 
@@ -45,9 +48,13 @@ export function Footer() {
           </div>
         </div>
 
+        {/* Navigation */}
         <div className="footer-links">
+
           <div>
-            <span className="footer-label">{t('Navigate')}</span>
+            <span className="footer-label">
+              {t('Company')}
+            </span>
 
             {navLinks.map((link) => (
               <Link key={link.to} to={link.to}>
@@ -56,39 +63,75 @@ export function Footer() {
             ))}
           </div>
 
+          {/* Services */}
           <div>
-            <span className="footer-label">{t('Services')}</span>
+            <span className="footer-label">
+              {t('Services')}
+            </span>
 
-            {services.map((service) => (
+            {services.slice(0, 5).map((service) => (
               <Link key={service.title} to="/services">
                 {tService(service, language).title}
               </Link>
             ))}
           </div>
 
+          {/* Contact */}
           <div>
-            <span className="footer-label">{t('Get in touch')}</span>
-
-            {/* Official Company Email */}
-            <a href="mailto:info@gnsprime.com">
-              <Mail size={13} />
-              info@gnsprime.com
-            </a>
-
-            {/* Official Company Phone */}
-            <a href="tel:+96871517838">
-              <Phone size={13} />
-              +968 7151 7838
-            </a>
-
-            {/* Official Company Location */}
-            <span className="footer-location">
-              <MapPin size={13} />
-              {language === 'ar'
-                ? 'مسقط، سلطنة عُمان'
-                : 'Muscat, Sultanate of Oman'}
+            <span className="footer-label">
+              {t('Contact')}
             </span>
 
+            {/* General Inquiries */}
+            <a href="mailto:info@gnsprime.com">
+              <Mail size={13} />
+              <span>
+                <strong>info@gnsprime.com</strong>
+                <small>{t('General Inquiries')}</small>
+              </span>
+            </a>
+
+            {/* Sales */}
+            <a href="mailto:sales@gnsprime.com">
+              <Mail size={13} />
+              <span>
+                <strong>sales@gnsprime.com</strong>
+                <small>{t('Sales & Business')}</small>
+              </span>
+            </a>
+
+            {/* Support */}
+            <a href="mailto:support@gnsprime.com">
+              <Mail size={13} />
+              <span>
+                <strong>support@gnsprime.com</strong>
+                <small>{t('Customer Support')}</small>
+              </span>
+            </a>
+
+            {/* Phone */}
+            <a href="tel:+96871517838">
+              <Phone size={13} />
+              <span>
+                <strong>+968 7151 7838</strong>
+                <small>{t('Phone / WhatsApp')}</small>
+              </span>
+            </a>
+
+            {/* Location */}
+            <span className="footer-location">
+              <MapPin size={13} />
+              <span>
+                <strong>
+                  {language === 'ar'
+                    ? 'مسقط، سلطنة عُمان'
+                    : 'Muscat, Sultanate of Oman'}
+                </strong>
+                <small>{t('Location')}</small>
+              </span>
+            </span>
+
+            {/* CTA */}
             <Link className="footer-cta" to="/contact">
               {t('Start a conversation')}
               <ArrowRight size={14} />
@@ -97,12 +140,16 @@ export function Footer() {
         </div>
       </div>
 
+      {/* Bottom */}
       <div className="container footer-bottom">
         <span>
-          © 2026 Gulf Net Solution SPC. {t('All rights reserved.')}
+          © 2026 Gulf Net Solution SPC.{' '}
+          {t('All rights reserved.')}
         </span>
 
-        <span>{t("Built for what's next.")}</span>
+        <span>
+          {t("Built for what's next.")}
+        </span>
       </div>
     </footer>
   );
