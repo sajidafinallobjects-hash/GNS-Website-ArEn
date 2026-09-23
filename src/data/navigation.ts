@@ -5,5 +5,6 @@ export const navLinks: NavLink[] = [
   { to: '/about', label: 'About' },
   { to: '/services', label: 'Services' },
   { to: '/projects', label: 'Projects' },
+  { to: '/team', label: 'Team' },
   { to: '/why-gns', label: 'Why GNS' },
 ];
